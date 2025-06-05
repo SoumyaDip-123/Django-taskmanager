@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Task</title>
+    <link rel="stylesheet" href="{% static 'task_style.css' %}">
+</head>
+
+<body>
+    <div class="container text-center">
+        <h2>Are you sure you want to delete "<strong>{{ task.title }}</strong>"?</h2>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="button danger">Yes, Delete</button>
+            <a href="{% url 'task_list' %}" class="button">Cancel</a>
+        </form>
+    </div>
+</body>
+
+</html>

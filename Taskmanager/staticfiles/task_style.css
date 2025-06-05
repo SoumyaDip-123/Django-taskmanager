@@ -1,0 +1,86 @@
+/* Task List Page */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #2769cc;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #ccd3d6;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Filter Links */
+.filters a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.filters a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.button {
+    background: #007bff;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.button.danger {
+    background: #dc3545;
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-list li.done {
+    background-color: #d4edda;
+    color: #155724;
+    text-decoration: line-through;
+}
+
+/* Action Links */
+.actions a {
+    margin-left: 10px;
+    color: #555;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .task-list li {
+        flex-direction: column;
+    }
+}

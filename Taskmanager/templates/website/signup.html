@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- Corrected Static File Path -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="auth-body">
+    <div class="auth-container">
+        <h2>Sign Up</h2>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="id_username"><i class="fas fa-user"></i> Username</label>
+                <div class="input-group">
+                    {{ form.username }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="id_email"><i class="fas fa-envelope"></i> Email</label>
+                <div class="input-group">
+                    {{ form.email }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="id_password1"><i class="fas fa-lock"></i> Password</label>
+                <div class="input-group">
+                    {{ form.password1 }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="id_password2"><i class="fas fa-lock"></i> Confirm Password</label>
+                <div class="input-group">
+                    {{ form.password2 }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="id_date_of_birth"><i class="fas fa-calendar"></i> Date of Birth</label>
+                <div class="input-group">
+                    {{ form.date_of_birth }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="input-group">
+                    {{ form.gender }}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary auth-btn">SIGN UP</button>
+        </form>
+
+        <p class="text-center mt-3">Already have an account? <a href="{% url 'login' %}">LOGIN</a></p>
+    </div>
+</body>
+
+</html>

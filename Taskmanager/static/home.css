@@ -1,0 +1,128 @@
+/* General Styles */
+.homepage-body {
+    background-color: #041424;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    width: 45px;
+    height: auto;
+}
+
+/* .logo-img {
+    width: 45px;
+    height: auto;
+    margin-right: 10px;
+} */
+
+.me-2 {
+    margin-right: .5rem !important;
+    width: 40px;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6888d3;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.homepage-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 90%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Button Styling */
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* Task Management Image */
+.homepage-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+/* Authentication Section */
+.container .btn {
+    margin: 10px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .logo-img {
+        width: 35px;
+    }
+
+    .site-title {
+        font-size: 18px;
+    }
+}

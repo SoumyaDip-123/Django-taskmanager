@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+    <link rel="stylesheet" href="{% static 'task_style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Your Tasks</h1>
+        <div class="filters"> <a href="?filter=all">All</a> | <a href="?filter=pending">Pending</a> | <a
+                href="?filter=completed">Completed</a> | <a href="?filter=due_today">Due Today</a> </div> <a
+            class="button" href="{% url 'create_task' %}">+ New Task</a>
+        <ul class="task-list"> {% for task in tasks %} <li class="{% if task.status == 'completed' %}done{% endif %}">
+                <strong>{{ task.title }}</strong> – {{ task.due_date }} <div class="actions"> <a
+                        href="{% url 'toggle_task_status' task.id %}">[Toggle]</a> <a
+                        href="{% url 'edit_task' task.id %}">[Edit]</a> <a
+                        href="{% url 'delete_task' task.id %}">[Delete]</a> </div>
+            </li> {% empty %} <li>No tasks found.</li> {% endfor %} </ul>
+    </div>
+    <script> document.addEventListener("DOMContentLoaded", function () { const deleteButtons = document.querySelectorAll(".button.danger"); deleteButtons.forEach(button => { button.addEventListener("click", function (event) { if (!confirm("Are you sure you want to delete this task?")) { event.preventDefault(); } }); }); }); </script>
+</body>
+
+</html>

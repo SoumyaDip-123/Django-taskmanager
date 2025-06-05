@@ -1,0 +1,100 @@
+/* Authentication Page */
+body.auth-body {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Auth Form Container */
+.auth-container {
+    background: #fff;
+    padding: 22px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Form Inputs */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.form-group i {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    color: #999;
+}
+
+.form-group input,
+.form-group select {
+    width: 70%;
+    padding: 10px 10px 10px 40px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Submit Button */
+.auth-btn {
+    width: 65%;
+    background: linear-gradient(to right, #43e97b, #38f9d7);
+    border: none;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    opacity: 0.95;
+}
+
+/* Social Login Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.social-icons i {
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: #000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .auth-container {
+        width: 90%;
+        padding: 15px;
+    }
+}
