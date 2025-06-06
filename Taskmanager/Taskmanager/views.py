@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Task, CustomUser
 from .forms import CustomUserCreationForm, TaskForm
 from datetime import date
+from datetime import datetime
+
 
 # Home page
 def index(request):
@@ -28,11 +30,15 @@ def task_list(request):
     filter_option = request.GET.get('filter', 'all')
     tasks = Task.objects.filter(user=request.user)
 
-    filter_map = {
-        'pending': tasks.filter(status='pending'),
-        'completed': tasks.filter(status='completed'),
-        'due_today': tasks.filter(due_date=date.today())
-    }
+    if filter_option == 'pending':
+        tasks = tasks.filter(status='pending')
+    elif filter_option == 'completed':
+        tasks = tasks.filter(status='completed')
+    elif filter_option == 'due_today':
+        tasks = tasks.filter(due_date__date=datetime.today().date())
+
+    return render(request, 'website/task_list.html', {'tasks': tasks})
+    
 
     tasks = filter_map.get(filter_option, tasks)
     return render(request, 'website/task_list.html', {'tasks': tasks})

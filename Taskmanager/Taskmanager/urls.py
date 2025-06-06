@@ -25,7 +25,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('signup/', views.signup_view, name='signup'),
     path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    path('logout/', views.custom_logout_view, name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
+
 
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
     path('tasks/', views.task_list, name='task_list'),
