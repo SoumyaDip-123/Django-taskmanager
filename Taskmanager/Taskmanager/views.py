@@ -6,8 +6,8 @@ from .forms import CustomUserCreationForm, TaskForm
 from datetime import date
 
 # Home page
-def home(request):
-    return render(request, 'website/home.html')
+def index(request):
+    return render(request, 'website/index.html')
 
 # User Signup
 def signup_view(request):
@@ -86,4 +86,4 @@ from django.contrib.auth import logout
 
 def custom_logout_view(request):
     logout(request)
-    return redirect('home')  # ✅ Redirect users to home after logout
+    return redirect('index')  # ✅ Redirect users to home after logout

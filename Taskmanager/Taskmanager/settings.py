@@ -82,4 +82,4 @@ DATABASES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'task_list'  # ✅ Redirect to Task Manager after login
-LOGOUT_REDIRECT_URL = 'home'  # ✅ Redirect to Home after logout
+LOGOUT_REDIRECT_URL = 'index'  # ✅ Redirect to Home after logout
